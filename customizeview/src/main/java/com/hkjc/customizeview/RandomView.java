@@ -89,8 +89,6 @@ public class RandomView extends View {
             mContentText = "" + mRandom.nextInt();
             postInvalidate();
         }
-
-
         return super.onTouchEvent(event);
     }
 }
