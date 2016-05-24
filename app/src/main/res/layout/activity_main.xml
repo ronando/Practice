@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/content_frame11"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_world" />
+
+        <ImageView
+            android:id="@+id/iv_bigimg"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="70dp" />
+
+        <Button
+            android:id="@+id/b_button"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="button1" />
+
+        <Button
+            android:id="@+id/b_button2"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/b_button"
+            android:text="button2" />
+    </RelativeLayout>
+
+
+    <include layout="@layout/drawer_layout" />
+
+</LinearLayout>

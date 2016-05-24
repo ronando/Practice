@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="contentText" format="string"/>
+    <attr name="contentSize" format="dimension"/>
+    <attr name="contentColor" format="color"/>
+
+
+    <declare-styleable name="RandomView">
+        <attr name="contentText"/>
+        <attr name="contentSize"/>
+        <attr name="contentColor"/>
+    </declare-styleable>
+
+
+
+
+</resources>

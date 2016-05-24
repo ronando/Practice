@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
+
+    defaultConfig {
+        applicationId "com.hkjc.jessepractice"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            applicationIdSuffix ".release"
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+
+
+
+    android.applicationVariants.all{ variant->
+        def file = variant.outputs[0].outputFile
+        variant.outputs[0].outputFile = new File(file.parent, file.name.replace("-","_"))
+    }
+
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+        compile 'com.android.support:appcompat-v7:23.1.1'
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/flavornameaaa/java']
+            res.srcDirs = ['src/main/res', 'src/flavornamebbb/']
+        }
+        flavornameaaa {
+            resources.srcDirs = ['src/flavornameaaa/resources', 'src/flavornameaaa/resources/', 'src/flavornameaaa/res/']
+        }
+        flavornamebbb {
+            java.srcDirs = ['src/flavornamebbb/java', 'src/flavornamebbb/java/']
+            resources.srcDirs = ['src/flavornamebbb/resources', 'src/flavornamebbb/resources/', 'src/flavornamebbb/res/']
+        }
+    }
+}
+dependencies {
+}
+

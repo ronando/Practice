@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">JessePractice</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_3">activity3</string>
+    <string name="title_activity_tabbed3">TabbedActivity3</string>
+    <string name="title_activity_tabbed4">TabbedActivity4</string>
+    <string name="title_activity_practice_fragment">PracticeFragmentActivity</string>
+    <string name="title_activity_temp">TempActivity</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+</resources>
