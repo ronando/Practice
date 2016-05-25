@@ -43,7 +43,7 @@
             android:id="@+id/tv_drag1"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:text="draggable view 1"
+            android:text="draggable view \n i'll auto back"
             android:layout_margin="10dp"
             android:gravity="center"
             android:background="@android:color/holo_red_light"/>
@@ -53,7 +53,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
-            android:text="draggable view 2"
+            android:text="draggable view \n edge control"
             android:gravity="center"
             android:background="@android:color/holo_green_light"/>
 
@@ -62,7 +62,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
-            android:text="draggable view 3"
+            android:text="draggable view \n drag me anywhere"
             android:gravity="center"
             android:background="@android:color/holo_blue_light"/>
 

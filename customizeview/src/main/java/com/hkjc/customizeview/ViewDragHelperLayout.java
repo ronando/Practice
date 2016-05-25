@@ -32,20 +32,21 @@ public class ViewDragHelperLayout extends LinearLayout {
         mDragHelper = ViewDragHelper.create(this, 1, new ViewDragHelper.Callback() {
             @Override
             public boolean tryCaptureView(View child, int pointerId) {
-                if(child == mAutoBackView || child == mAnywayView){
-                    return true;
-                }
-                return false;
+                return (child == mAutoBackView || child == mAnywayView) ;
             }
 
             @Override
-            public void onEdgeTouched(int edgeFlags, int pointerId) {
-                super.onEdgeTouched(edgeFlags, pointerId);
+            public void onEdgeDragStarted(int edgeFlags, int pointerId) {
+                super.onEdgeDragStarted(edgeFlags, pointerId);
+                mDragHelper.captureChildView(mEdgeView,pointerId);
             }
 
             @Override
             public void onViewReleased(View releasedChild, float xvel, float yvel) {
-                super.onViewReleased(releasedChild, xvel, yvel);
+                if(releasedChild == mAutoBackView){
+                    mDragHelper.settleCapturedViewAt(40,40);
+                    invalidate();
+                }
             }
 
             @Override
@@ -55,11 +56,21 @@ public class ViewDragHelperLayout extends LinearLayout {
 
             @Override
             public int clampViewPositionVertical(View child, int top, int dy) {
-                return top;
+                return Math.min(getHeight(),Math.max(100,top));
             }
+
+
         });
+        mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_RIGHT);
+    }
 
 
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+        if(mDragHelper.continueSettling(true)){
+            invalidate();
+        }
     }
 
     @Override
@@ -79,11 +90,13 @@ public class ViewDragHelperLayout extends LinearLayout {
     }
 
     @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return mDragHelper.shouldInterceptTouchEvent(ev);
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(mDragHelper.shouldInterceptTouchEvent(event)){
-            mDragHelper.processTouchEvent(event);
-            return true;
-        }
-        return super.onTouchEvent(event);
+        mDragHelper.processTouchEvent(event);
+        return true;
     }
 }
