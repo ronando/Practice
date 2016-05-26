@@ -58,13 +58,11 @@ public class LeftNavigationDrawer extends ViewGroup{
      */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-
         MarginLayoutParams lp = (MarginLayoutParams) mContentView.getLayoutParams();
         mContentView.layout(l+getPaddingLeft()+lp.leftMargin
                             ,t+getPaddingTop() + lp.topMargin
-                            ,r-getPaddingRight()-lp.rightMargin
-                            ,b-getPaddingBottom()-lp.bottomMargin);
-
+                            ,l+getPaddingLeft()+lp.leftMargin + lp.width
+                            ,t+getPaddingTop() + lp.topMargin + lp.height);
 
     }
 
