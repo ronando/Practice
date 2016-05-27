@@ -95,10 +95,10 @@ public class LeftNavigationDrawer extends ViewGroup {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         MarginLayoutParams lp = (MarginLayoutParams) mContentView.getLayoutParams();
-        mContentView.layout(l + getPaddingLeft() + lp.leftMargin
-                , t + getPaddingTop() + lp.topMargin
-                , l + getPaddingLeft() + lp.leftMargin + mContentView.getMeasuredWidth()
-                , t + getPaddingTop() + lp.topMargin + mContentView.getMeasuredHeight());
+        mContentView.layout(getPaddingLeft() + lp.leftMargin
+                , getPaddingTop() + lp.topMargin
+                , getPaddingLeft() + lp.leftMargin + mContentView.getMeasuredWidth()
+                , getPaddingTop() + lp.topMargin + mContentView.getMeasuredHeight());
         lp = (MarginLayoutParams) mDrawerView.getLayoutParams();
         int menuWidth = mDrawerView.getMeasuredWidth();
         int drawerLeft = -menuWidth + (int)(menuWidth * mRatioMenuOnScreen);

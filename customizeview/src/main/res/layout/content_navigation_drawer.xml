@@ -13,16 +13,20 @@
     tools:showIn="@layout/activity_navigation_drawer">
 
     <com.hkjc.customizeview.LeftNavigationDrawer
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/darker_gray">
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:background="@android:color/darker_gray"
+        android:padding="10dp"
+        android:layout_alignParentRight="true">
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/holo_green_light"/>
+            android:background="@android:color/holo_green_light"
+            android:layout_margin="20dp"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/holo_red_light"/>
+            android:background="@android:color/holo_red_light"
+            />
     </com.hkjc.customizeview.LeftNavigationDrawer>
 </RelativeLayout>
