@@ -47,7 +47,6 @@ public class ProgressView extends View {
                         mProgress = 0;
                     }
                     try {
-                        Log.d("progress thread", "run()");
                         Thread.sleep(10);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
