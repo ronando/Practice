@@ -10,23 +10,23 @@ import android.view.ViewGroup;
 /**
  * Created by jesse on 26/5/2016.
  */
-public class LeftNavigationDrawer extends ViewGroup {
+public class ViewLeftNavigationLayout extends ViewGroup {
     protected View mDrawerView;
     protected View mContentView;
     protected ViewDragHelper mDragHelper;
     protected float mRatioMenuOnScreen = 0;
 
 
-    public LeftNavigationDrawer(Context context) {
+    public ViewLeftNavigationLayout(Context context) {
         this(context, null);
     }
 
-    public LeftNavigationDrawer(Context context, AttributeSet attrs) {
+    public ViewLeftNavigationLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
 
-    public LeftNavigationDrawer(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ViewLeftNavigationLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mDragHelper = ViewDragHelper.create(this, 1, new ViewDragHelper.Callback() {
             @Override
